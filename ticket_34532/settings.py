@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "django.forms",
+    "example_app",
 ]
 
 MIDDLEWARE = [
@@ -121,3 +123,5 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/dev/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+FORM_RENDERER = "django.forms.renderers.TemplatesSetting"
