@@ -12,7 +12,11 @@ def add_mymodel(request):
 
 
 def add_mymodels(request):
-    MyModelFormset = formset_factory(MyModelForm, renderer=OtherFormRenderer())
+    # The issue is that here, we'd expect the MyModelForm.default_renderer to
+    # be used here. Instead, the renderer defined in settings.FORM_RENDERER
+    # is used.
+    MyModelFormset = formset_factory(MyModelForm, extra=2)
+
     formset = MyModelFormset()
     context = {"formset": formset}
     return render(request, "formset.html", context)
