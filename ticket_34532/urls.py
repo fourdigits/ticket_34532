@@ -17,10 +17,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from example_app.views import add_mymodel
+from example_app.views import add_mymodel, add_mymodels
 
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("", add_mymodel, name="add_mymodel"),
+    path("add_mymodel/", add_mymodel, name="add_mymodel"),
+    path("", add_mymodels, name="add_mymodels"),
 ]
